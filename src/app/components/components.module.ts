@@ -6,6 +6,7 @@ import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatL
 import {RouterModule} from '@angular/router';
 import {componentsRoutes} from './component.routes';
 import {ReactiveFormsModule} from '@angular/forms';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     MatTreeModule,
     MatListModule,
+    NgxSpinnerModule,
   ]
 })
 export class ComponentsModule { }

@@ -6,4 +6,5 @@ export interface StarredModel {
   full_name: string;
   owner: UserModel;
   description: string;
+  html_url: string;
 }

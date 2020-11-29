@@ -1,18 +1,15 @@
 .github-user-info {
-  //display: flex;
-  //justify-content: center;
-  //align-self: center;
   height: 90%;
   max-height: 90%;
   padding-top: 2rem;
-  //padding-bottom: 2rem;
 
   &__card {
+    position: relative;
     display: flex;
-    height: 40%;
-    max-height: 100%;
-    width: 100%;
-    margin-left: 15rem;
+    height: 20%;
+    max-height: 20%;
+    width: 80%;
+    left: 15%;
   }
 
   &__avatar {
@@ -24,11 +21,13 @@
   }
 
   &__menu {
+    position: relative;
     display: flex;
     width: 100%;
     flex-direction: column;
     height: 100%;
     max-height: 100%;
+
     &__name {
       font-size: 2rem;
       font-weight: bold;
@@ -37,39 +36,38 @@
       max-height: 10%;
     }
 
-    &__options {
-      height: 40%;
-      max-height: 40%;
-      position: relative;
-      display: flex;
-      justify-content: flex-end;
-      width: 40%;
-      &__button-repo {
-        position: absolute;
-        bottom: 0;
-        background-color: #FFFFFF;
-        margin-right: 6rem;
-        height: 25%;
-        max-height: 25%;
-      }
+    &__button-repo {
+      position: absolute;
+      bottom: 10%;
+      background-color: #FFFFFF;
+      margin-right: 6rem;
+      height: 25%;
+      max-height: 25%;
+      left: 5%;
+    }
 
-      &__button-starred {
-        position: absolute;
-        bottom: 0;
-        background-color: #FFFFFF;
-        height: 25%;
-        max-height: 25%;
-      }
+    &__button-starred {
+      position: absolute;
+      background-color: #FFFFFF;
+      height: 25%;
+      max-height: 25%;
+      left: 10%;
+      bottom: 10%;
     }
   }
 }
 
 .github-repo-content {
-  height: 50%;
-  max-height: 50%;
+  position: relative;
+  height: 70%;
+  max-height: 70%;
   background-color: #161616;
   border-radius: 10px;
   overflow-y: scroll;
+  width: 70%;
+  max-width: 70%;
+  left: 15%;
+  margin-top: 100px;
 
   &::-webkit-scrollbar {
     display: none;
@@ -113,3 +111,89 @@
     }
   }
 }
+
+@media (min-width: 2201px) and (max-width: 2600px) {
+  .github-user-info {
+    &__menu {
+      &__button-repo {
+        left: 7%;
+      }
+
+      &__button-starred {
+        left: 15%;
+      }
+    }
+  }
+};
+
+@media (min-width: 1901px) and (max-width: 2200px) {
+  .github-user-info {
+    &__menu {
+      &__button-repo {
+        left: 8%;
+      }
+
+      &__button-starred {
+        left: 17%;
+      }
+    }
+  }
+};
+
+@media (min-width: 1701px) and (max-width: 1900px) {
+  .github-user-info {
+    &__menu {
+      &__button-repo {
+        left: 10%;
+      }
+
+      &__button-starred {
+        left: 20%;
+      }
+    }
+  }
+};
+
+@media (min-width: 1501px) and (max-width: 1700px) {
+  .github-user-info {
+    &__menu {
+      &__button-starred {
+        left: 22%;
+      }
+    }
+  }
+};
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .github-user-info {
+    &__menu {
+      &__button-repo {
+        left: 12%;
+      }
+
+      &__button-starred {
+        left: 27%;
+      }
+    }
+  }
+};
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .github-user-info {
+    &__menu {
+      &__button-starred {
+        left: 30%;
+      }
+    }
+  }
+};
+
+@media (max-width: 900px) {
+  .github-user-info {
+    &__menu {
+      &__button-starred {
+        left: 35%;
+      }
+    }
+  }
+};

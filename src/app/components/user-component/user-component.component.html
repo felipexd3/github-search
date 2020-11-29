@@ -1,12 +1,10 @@
-<div class="container github-user-info">
+<div class="github-user-info">
   <div class="github-user-info__card">
     <img src="{{user.avatar_url}}" alt="Avatar" class="github-user-info__avatar">
     <div class="github-user-info__menu">
       <span class="github-user-info__menu__name">{{user.name}} - {{user.login}}</span>
-      <div class="github-user-info__menu__options">
-        <button class="github-user-info__menu__options__button-repo" mat-button (click)="searchRepos()">Repositórios</button>
-        <button class="github-user-info__menu__options__button-starred" mat-button (click)="searchStarred()">Favoritos</button>
-      </div>
+      <button class="github-user-info__menu__button-repo" mat-button (click)="searchRepos()">Repositórios</button>
+      <button class="github-user-info__menu__button-starred" mat-button (click)="searchStarred()">Favoritos</button>
     </div>
   </div>
   <div class="github-repo-content">
@@ -36,7 +34,7 @@
           </div>
           <div class="github-repo-content__list__container__redirect">
             <img src="{{star.owner.avatar_url}}" alt="Avatar" class="github-repo-content__list__container__redirect__owner-pic">
-            <button mat-button class="github-repo-content__list__container__redirect__button">
+            <button mat-button class="github-repo-content__list__container__redirect__button" (click)="redirectTo(star.html_url)">
               <i class="fas fa-arrow-right"></i>
             </button>
           </div>
@@ -45,4 +43,5 @@
       </mat-list>
     </div>
   </div>
+  <ngx-spinner></ngx-spinner>
 </div>

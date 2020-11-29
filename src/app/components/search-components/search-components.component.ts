@@ -5,6 +5,7 @@ import {Subscription} from 'rxjs';
 import {UserModel} from '../../models/user-model';
 import {GithubServiceService} from '../../services/github-service.service';
 import {EmitterService} from '../../services/emitters/emitter.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-search-components',
@@ -20,7 +21,8 @@ export class SearchComponentsComponent implements OnInit {
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private githubService: GithubServiceService,
-              private userEmitterService: EmitterService) {
+              private userEmitterService: EmitterService,
+              private spinner: NgxSpinnerService) {
     this.searchForm = this.formBuilder.group({
       username: ['', Validators.required]
     });
@@ -37,14 +39,17 @@ export class SearchComponentsComponent implements OnInit {
   }
 
   findClient() {
+    this.spinner.show();
     if (!this.searchForm.valid) {
       return false;
     }
     this.githubService.fetchUser(this.searchForm.controls.username.value)
       .subscribe(data => {
         this.userEmitterService.setGithubUser(data);
+        this.spinner.hide();
         this.router.navigateByUrl('/user');
       }, error => {
+        this.spinner.hide();
         alert(error.status === 404 ? 'Usuário não encontrado' : 'Erro inesperado');
       });
   }

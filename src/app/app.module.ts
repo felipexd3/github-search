@@ -7,6 +7,7 @@ import { MainLayoutComponent } from './@layouts/main-layout/main-layout.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
         MatToolbarModule,
         MatIconModule,
         HttpClientModule,
+        NgxSpinnerModule
     ],
   providers: [],
   bootstrap: [AppComponent]
