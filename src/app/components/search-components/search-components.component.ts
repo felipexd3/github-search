@@ -42,9 +42,6 @@ export class SearchComponentsComponent implements OnInit {
 
   findClient() {
     this.spinner.show();
-    if (!this.searchForm.valid) {
-      return false;
-    }
     this.githubService.fetchUser(this.searchForm.controls.username.value)
       .subscribe(data => {
         this.userEmitterService.setGithubUser(data);
