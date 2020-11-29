@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import {MatSnackBarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
         MatToolbarModule,
         MatIconModule,
         HttpClientModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        MatSnackBarModule
     ],
   providers: [],
   bootstrap: [AppComponent]

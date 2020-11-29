@@ -8,7 +8,6 @@ import {componentsRoutes} from './component.routes';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgxSpinnerModule} from 'ngx-spinner';
 
-
 @NgModule({
   declarations: [UserComponentComponent, SearchComponentsComponent],
   imports: [

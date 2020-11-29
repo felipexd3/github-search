@@ -6,6 +6,7 @@ import {UserModel} from '../../models/user-model';
 import {GithubServiceService} from '../../services/github-service.service';
 import {EmitterService} from '../../services/emitters/emitter.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-search-components',
@@ -22,7 +23,8 @@ export class SearchComponentsComponent implements OnInit {
               private formBuilder: FormBuilder,
               private githubService: GithubServiceService,
               private userEmitterService: EmitterService,
-              private spinner: NgxSpinnerService) {
+              private spinner: NgxSpinnerService,
+              private snackBar: MatSnackBar) {
     this.searchForm = this.formBuilder.group({
       username: ['', Validators.required]
     });
@@ -50,7 +52,9 @@ export class SearchComponentsComponent implements OnInit {
         this.router.navigateByUrl('/user');
       }, error => {
         this.spinner.hide();
-        alert(error.status === 404 ? 'Usuário não encontrado' : 'Erro inesperado');
+        this.snackBar.open( error.status === 404 ? 'Usuário não encontrado' : 'Erro inesperado', '', {
+          duration: 2000,
+        });
       });
   }
 
