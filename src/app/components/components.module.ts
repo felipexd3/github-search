@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {componentsRoutes} from './component.routes';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import {UserGuardService} from '../guard/user-guard.service';
 
 @NgModule({
   declarations: [UserComponentComponent, SearchComponentsComponent],
@@ -21,6 +22,9 @@ import {NgxSpinnerModule} from 'ngx-spinner';
     MatTreeModule,
     MatListModule,
     NgxSpinnerModule,
+  ],
+  providers: [
+    UserGuardService
   ]
 })
 export class ComponentsModule { }

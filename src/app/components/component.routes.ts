@@ -1,6 +1,7 @@
 import {Routes} from '@angular/router';
 import {SearchComponentsComponent} from './search-components/search-components.component';
 import {UserComponentComponent} from './user-component/user-component.component';
+import {UserGuardService} from '../guard/user-guard.service';
 
 export const componentsRoutes: Routes = [
   {
@@ -8,7 +9,8 @@ export const componentsRoutes: Routes = [
     component: SearchComponentsComponent
   },
   {
-    path: 'user',
-    component: UserComponentComponent
+    path: 'user/:username',
+    component: UserComponentComponent,
+    canActivate: [UserGuardService]
   }
 ];

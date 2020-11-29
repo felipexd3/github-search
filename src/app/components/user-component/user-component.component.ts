@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {EmitterService} from '../../services/emitters/emitter.service';
 import {UserModel} from '../../models/user-model';
 import {GithubServiceService} from '../../services/github-service.service';
 import {RepositoryModel} from '../../models/repository-model';
 import {StarredModel} from '../../models/starred-model';
-import {NgxSpinnerService} from 'ngx-spinner';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-user-component',
@@ -18,30 +17,26 @@ export class UserComponentComponent implements OnInit {
   isSearchRepos: boolean;
   starred: StarredModel[];
 
-  constructor(private userEmitterService: EmitterService,
-              private githubService: GithubServiceService,
-              private spinner: NgxSpinnerService) {
+  constructor(private githubService: GithubServiceService,
+              private router: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.user = this.userEmitterService.getGithubUser();
+    this.user = this.router.snapshot.data as UserModel;
   }
 
+
   searchRepos() {
-    this.spinner.show();
     this.isSearchRepos = true;
     this.githubService.fetchRepos(this.user.login).subscribe(data => {
       this.repository = data;
-      this.spinner.hide();
     });
   }
 
   searchStarred() {
-    this.spinner.show();
     this.isSearchRepos = false;
     this.githubService.fetchStarred(this.user.login).subscribe(data => {
       this.starred = data;
-      this.spinner.hide();
     });
   }
 
