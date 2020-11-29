@@ -1,0 +1,12 @@
+<div class="container git-content__main">
+  <form class="align-self-center git-content__main__form" [formGroup]="searchForm">
+    <mat-form-field appearance="fill" class="git-content__main__form__field">
+      <mat-label>Buscar por usuário</mat-label>
+      <input matInput [type]="'text'" formControlName="username">
+      <button mat-icon-button matSuffix [attr.aria-label]="'Buscar'" [attr.aria-pressed]="'Buscar'"
+              class="git-content__main__form__field__icon" (click)="findClient()" [disabled]="!canSearch">
+        <mat-icon><i class="fas fa-search"></i></mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+</div>

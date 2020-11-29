@@ -1,0 +1,28 @@
+section {
+  height: 100%;
+}
+
+.git-content {
+  height: 100% !important;
+
+  &__navbar {
+    background-color: #161616;
+
+    &__brand {
+      color: #FFFFFF;
+      margin-right: 1rem;
+    }
+
+    &__title {
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    max-height: 90%;
+  }
+}

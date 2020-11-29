@@ -1,0 +1,115 @@
+.github-user-info {
+  //display: flex;
+  //justify-content: center;
+  //align-self: center;
+  height: 90%;
+  max-height: 90%;
+  padding-top: 2rem;
+  //padding-bottom: 2rem;
+
+  &__card {
+    display: flex;
+    height: 40%;
+    max-height: 100%;
+    width: 100%;
+    margin-left: 15rem;
+  }
+
+  &__avatar {
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+
+  &__menu {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    &__name {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #FFFFFF;
+      height: 10%;
+      max-height: 10%;
+    }
+
+    &__options {
+      height: 40%;
+      max-height: 40%;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      width: 40%;
+      &__button-repo {
+        position: absolute;
+        bottom: 0;
+        background-color: #FFFFFF;
+        margin-right: 6rem;
+        height: 25%;
+        max-height: 25%;
+      }
+
+      &__button-starred {
+        position: absolute;
+        bottom: 0;
+        background-color: #FFFFFF;
+        height: 25%;
+        max-height: 25%;
+      }
+    }
+  }
+}
+
+.github-repo-content {
+  height: 50%;
+  max-height: 50%;
+  background-color: #161616;
+  border-radius: 10px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__list {
+    position: relative;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+
+      &__intern {
+        width: 80%;
+        max-width: 80%;
+      }
+
+      &__title {
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      &__description {
+        color: #FFFFFF;
+      }
+
+      &__redirect {
+
+        &__button {
+          cursor: pointer;
+          color: #FFFFFF;
+        }
+
+        &__owner-pic {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.git-content {
+  height: 100% !important;
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    max-height: 90%;
+
+    &__form {
+      width: 100%;
+
+      &__field {
+        width: 100%;
+
+        &__icon {
+          color: #FFFFFF;
+          &:disabled {
+            color: darkgray;
+            opacity: 30%;
+          }
+        }
+      }
+    }
+
+    //&__button {
+    //  background-color: #FFFFFF;
+    //}
+  }
+}
+
+mat-label {
+  color: #FFFFFF;
+}
+
+.mat-input-element {
+  color: #FFFFFF;
+}
+
+::ng-deep .mat-form-field-underline::before {
+  background-color: #FFFFFF !important;
+}

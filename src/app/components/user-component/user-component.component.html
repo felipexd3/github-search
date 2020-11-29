@@ -1,0 +1,48 @@
+<div class="container github-user-info">
+  <div class="github-user-info__card">
+    <img src="{{user.avatar_url}}" alt="Avatar" class="github-user-info__avatar">
+    <div class="github-user-info__menu">
+      <span class="github-user-info__menu__name">{{user.name}} - {{user.login}}</span>
+      <div class="github-user-info__menu__options">
+        <button class="github-user-info__menu__options__button-repo" mat-button (click)="searchRepos()">Repositórios</button>
+        <button class="github-user-info__menu__options__button-starred" mat-button (click)="searchStarred()">Favoritos</button>
+      </div>
+    </div>
+  </div>
+  <div class="github-repo-content">
+    <div *ngIf="isSearchRepos">
+      <mat-list *ngFor="let repo of repository">
+        <div class="github-repo-content__list__container">
+          <div>
+            <mat-list-item class="github-repo-content__list__container__title">{{repo.name}}</mat-list-item>
+            <mat-list-item class="github-repo-content__list__container__description">{{repo.description}}</mat-list-item>
+          </div>
+          <div class="github-repo-content__list__container__redirect">
+            <button mat-button class="github-repo-content__list__container__redirect__button" (click)="redirectTo(repo.html_url)">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+
+    <div *ngIf="!isSearchRepos">
+      <mat-list *ngFor="let star of starred">
+        <div class="github-repo-content__list__container">
+          <div class="github-repo-content__list__container__intern">
+            <mat-list-item class="github-repo-content__list__container__title">{{star.name}}</mat-list-item>
+            <mat-list-item class="github-repo-content__list__container__description">{{star.description}}</mat-list-item>
+          </div>
+          <div class="github-repo-content__list__container__redirect">
+            <img src="{{star.owner.avatar_url}}" alt="Avatar" class="github-repo-content__list__container__redirect__owner-pic">
+            <button mat-button class="github-repo-content__list__container__redirect__button">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </div>
+</div>
