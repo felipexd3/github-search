@@ -153,6 +153,19 @@
               }
             }
           }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "github-search:build",
+            "serverTarget": "github-search:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "github-search:build:production",
+              "serverTarget": "github-search:server:production"
+            }
+          }
         }
       }
     }
