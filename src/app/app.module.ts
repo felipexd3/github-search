@@ -17,7 +17,7 @@ import {InterceptorModule} from './interceptors/interceptor.module';
     MainLayoutComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,

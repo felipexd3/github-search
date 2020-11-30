@@ -1,27 +1,35 @@
-# GithubSearch
+# Documentação
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
+#### Descrição do projeto
 
-## Development server
+Projeto desenvolvido para consumir a api do github para consulta de perfis, 
+visualizar repositórios do usuário e repositórios favoritos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### O que é preciso para executar o projeto:
 
-## Code scaffolding
+Para executar o projeto você precisará ter instalado e configurado:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- angular v8
+- npm
 
-## Build
+#### Tecnologias Utilitizadas:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Angular
+- typescript
+- Angular Material
 
-## Running unit tests
+#### Iniciando o projeto:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O projeto foi desenvolvido utilitizando o **Angular Universal** para realização do SSR.
 
-## Running end-to-end tests
+    - Acesse o diretório do projeto à partir do cmd: ~ cd github-search
+    - Execute o comando para instalar as dependencias: ~ npm install
+    - Execute o comando para iniciar a aplicação: ~ npm run serve:ssr
+    
+#### Telas:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+<img src="./github/img/1.JPG" />
 
-## Further help
+<img src="./github/img/2.JPG" />
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<img src="./github/img/3.JPG" />
